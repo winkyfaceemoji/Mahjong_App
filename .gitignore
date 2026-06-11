@@ -1,0 +1,10 @@
+# Dependencies (restored by `npm install`)
+node_modules/
+
+# Local Claude Code settings (machine-specific)
+.claude/settings.local.json
+
+# Logs and OS cruft
+*.log
+Thumbs.db
+.DS_Store

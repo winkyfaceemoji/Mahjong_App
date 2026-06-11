@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahjong</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrap">
+  <div id="game-header">
+    <div id="status" class="status">Connecting...</div>
+    <div id="wall-info">Wall: --</div>
+  </div>
+
+  <div id="board">
+    <div id="corner-tl"></div>
+    <div id="player-top" class="player-area"></div>
+    <div id="corner-tr"></div>
+
+    <div id="player-left" class="player-area"></div>
+    <div id="center">
+      <div id="center-info">
+        <span id="round-wind"></span>
+        <span id="last-action"></span>
+      </div>
+      <div id="discard-pile"></div>
+    </div>
+    <div id="player-right" class="player-area"></div>
+
+    <div id="corner-bl"></div>
+    <div id="player-bottom" class="player-area"></div>
+    <div id="corner-br"></div>
+  </div>
+
+  <div id="action-bar">
+    <div id="claim-timer" class="hidden"><div id="claim-timer-bar" style="width:100%"></div></div>
+    <div id="action-buttons">
+      <button id="btn-win" class="action-btn win-btn hidden">🏆 Win!</button>
+      <button id="btn-discard" class="action-btn discard-btn hidden">Discard</button>
+      <div id="self-panel" style="display:contents"></div>
+      <div id="claim-panel" style="display:contents"></div>
+    </div>
+  </div>
+</div>
+
+<div id="game-over" class="hidden">
+  <div id="game-over-card">
+    <h2>Game Over</h2>
+    <div id="game-over-msg"></div>
+    <div class="btn-row" style="justify-content:center;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-primary" id="btn-new-game">New Game</button>
+      <button class="btn btn-secondary" id="btn-lobby">Back to Lobby</button>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
